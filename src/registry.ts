@@ -11,15 +11,15 @@ import type { ViewportOptions } from './viewport';
  * 视口内元素监控配置接口
  * 继承自视口配置，并添加测试函数
  */
-export interface InViewOptions extends ViewportOptions {
+export interface ViewSenseOptions extends ViewportOptions {
   /**
    * 测试函数，用于判断元素是否满足可见性条件
    */
-  test: (element: Element, options: InViewOptions) => boolean;
+  test: (element: Element, options: ViewSenseOptions) => boolean;
   /**
    * 其他可选属性
    */
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 /**
@@ -39,11 +39,11 @@ export type EventHandler = (element: Element) => void;
  * 视口内元素注册表类
  * 跟踪元素的可见性状态并触发相应事件
  */
-export class InViewRegistry {
+export class ViewSenseRegistry {
   /**
    * 配置选项
    */
-  options: InViewOptions;
+  options: ViewSenseOptions;
 
   /**
    * 所有被监控的元素列表
@@ -70,7 +70,7 @@ export class InViewRegistry {
    * @param elements - 要监视的元素数组
    * @param options - 配置选项
    */
-  constructor(elements: Element[], options: InViewOptions) {
+  constructor(elements: Element[], options: ViewSenseOptions) {
     this.options = options;
     this.elements = elements;
     this.current = [];
@@ -156,5 +156,7 @@ export class InViewRegistry {
  * @param options - 配置选项
  * @returns InViewRegistry实例
  */
-export default (elements: Element[], options: InViewOptions): InViewRegistry =>
-  new InViewRegistry(elements, options);
+export default (
+  elements: Element[],
+  options: ViewSenseOptions
+): ViewSenseRegistry => new ViewSenseRegistry(elements, options);

@@ -44,7 +44,7 @@ export interface ViewportOptions {
  * @param options - 检测选项配置
  * @returns 元素是否在视口中可见
  */
-export function inViewport(
+export function ViewSenseport(
   element: Element,
   options: ViewportOptions
 ): boolean {

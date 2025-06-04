@@ -26,7 +26,7 @@ import viewSense from  "view-sense"
 
 ## 基本用法
 
-使用EyeDOM，您可以注册当元素**进入**或**离开**视口时调用的处理函数。每个处理函数接收一个参数，即进入或离开视口的元素。
+使用ViewSense，您可以注册当元素**进入**或**离开**视口时调用的处理函数。每个处理函数接收一个参数，即进入或离开视口的元素。
 
 ```js
 viewSense('.someSelector')
@@ -38,10 +38,10 @@ viewSense('.someSelector')
 
 ## API
 
-EyeDOM为每组通过`viewSense(<selector>)`获取的元素维护一个单独的处理函数注册表。每个注册表都提供相同的四种方法。EyeDOM还提供四种顶层方法（`is`、`offset`、`threshold`和`test`）。
+ViewSense为每组通过`viewSense(<selector>)`获取的元素维护一个单独的处理函数注册表。每个注册表都提供相同的四种方法。ViewSense还提供四种顶层方法（`is`、`offset`、`threshold`和`test`）。
 
 ### viewSense(\<selector>).on(\<event>, \<handler>)
-> 为由`selector`选择的元素注册`event`事件的处理函数。EyeDOM只发出`'enter'`和`'exit'`两种事件。
+> 为由`selector`选择的元素注册`event`事件的处理函数。ViewSense只发出`'enter'`和`'exit'`两种事件。
 
 > ```js
 > viewSense('.someSelector').on('enter', doSomething);
@@ -63,7 +63,7 @@ EyeDOM为每组通过`viewSense(<selector>)`获取的元素维护一个单独的
 > ```
 
 ### viewSense.offset(\<offset>)
-> 默认情况下，EyeDOM认为元素只要触及视口的任何边缘就被视为在视口中。您可以设置一个与边缘的偏移量。例如，偏移量为`100`将考虑元素至少突破视口任何边缘`100`像素才会被视为在视口中。`offset`可以是正数或负数。
+> 默认情况下，ViewSense认为元素只要触及视口的任何边缘就被视为在视口中。您可以设置一个与边缘的偏移量。例如，偏移量为`100`将考虑元素至少突破视口任何边缘`100`像素才会被视为在视口中。`offset`可以是正数或负数。
 
 > ```js
 > viewSense.offset(100);
@@ -91,7 +91,7 @@ EyeDOM为每组通过`viewSense(<selector>)`获取的元素维护一个单独的
 > ```
 
 ### viewSense.test(\<test>)
-> 用自定义函数覆盖EyeDOM的默认可见性标准。该函数将接收元素和选项对象作为唯一的两个参数。当元素应该被视为可见时返回`true`，否则返回`false`。
+> 用自定义函数覆盖ViewSense的默认可见性标准。该函数将接收元素和选项对象作为唯一的两个参数。当元素应该被视为可见时返回`true`，否则返回`false`。
 
 > ```js
 > viewSense.test((el, options) => {
