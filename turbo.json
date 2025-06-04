@@ -1,0 +1,18 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["pnpm-lock.yaml", "**/tsconfig*.json"],
+  "globalEnv": ["NODE_ENV"],
+  "ui": "tui",
+  "envMode": "loose",
+  "tasks": {
+    "dev": {
+      "dependsOn": [],
+      "outputs": [],
+      "cache": false,
+      "persistent": true
+    },
+    "typecheck": {
+      "outputs": []
+    }
+  }
+}

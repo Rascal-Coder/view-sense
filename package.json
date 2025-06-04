@@ -1,0 +1,36 @@
+{
+  "name": "view-sense",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "turbo dev",
+    "lint": "ultracite lint",
+    "format": "ultracite format"
+  },
+  "keywords": [],
+  "author": "Rascal-Coder",
+  "license": "MIT",
+  "packageManager": "pnpm@10.10.0",
+  "dependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "lodash": "^4.17.21",
+    "tsup": "^8.5.0",
+    "turbo": "^2.5.4"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.17",
+    "typescript": "^5.8.3",
+    "ultracite": "^4.2.6"
+  }
+}
