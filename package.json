@@ -1,6 +1,6 @@
 {
   "name": "view-sense",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -40,5 +40,6 @@
     "jsdom": "^26.1.0",
     "typescript": "^5.8.3",
     "ultracite": "^4.2.6"
-  }
+  },
+  "files": ["dist", "README.md"]
 }
