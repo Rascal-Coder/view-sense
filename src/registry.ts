@@ -15,7 +15,7 @@ export interface ViewSenseOptions extends ViewportOptions {
   /**
    * 测试函数，用于判断元素是否满足可见性条件
    */
-  test: (element: Element, options: ViewSenseOptions) => boolean;
+  test?: (element: Element, options: ViewSenseOptions) => boolean;
   /**
    * 其他可选属性
    */
@@ -43,7 +43,7 @@ export class ViewSenseRegistry {
   /**
    * 配置选项
    */
-  options: ViewSenseOptions;
+  options?: ViewSenseOptions;
 
   /**
    * 所有被监控的元素列表
@@ -70,7 +70,7 @@ export class ViewSenseRegistry {
    * @param elements - 要监视的元素数组
    * @param options - 配置选项
    */
-  constructor(elements: Element[], options: ViewSenseOptions) {
+  constructor(elements: Element[], options?: ViewSenseOptions) {
     this.options = options;
     this.elements = elements;
     this.current = [];
@@ -86,7 +86,7 @@ export class ViewSenseRegistry {
    */
   check(): this {
     this.elements.forEach((el) => {
-      const passes = this.options.test(el, this.options);
+      const passes = this.options?.test?.(el, this.options) ?? false;
       const index = this.current.indexOf(el);
       const current = index > -1;
       const entered = passes && !current;
@@ -158,5 +158,5 @@ export class ViewSenseRegistry {
  */
 export default (
   elements: Element[],
-  options: ViewSenseOptions
+  options?: ViewSenseOptions
 ): ViewSenseRegistry => new ViewSenseRegistry(elements, options);

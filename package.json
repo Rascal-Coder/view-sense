@@ -16,7 +16,8 @@
     "build": "tsup",
     "dev": "turbo dev",
     "lint": "ultracite lint",
-    "format": "ultracite format"
+    "format": "ultracite format",
+    "test:unit": "vitest run"
   },
   "keywords": [],
   "author": "Rascal-Coder",
@@ -26,10 +27,12 @@
     "@biomejs/biome": "^1.9.4",
     "lodash": "^4.17.21",
     "tsup": "^8.5.0",
-    "turbo": "^2.5.4"
+    "turbo": "^2.5.4",
+    "vitest": "^3.2.1"
   },
   "devDependencies": {
     "@types/lodash": "^4.17.17",
+    "jsdom": "^26.1.0",
     "typescript": "^5.8.3",
     "ultracite": "^4.2.6"
   }

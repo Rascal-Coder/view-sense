@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   app.innerHTML = `
     <div class="container py-5">
       <header class="text-center mb-5 py-5">
-        <h1 class="display-4 fw-bold">EyeDOM <span class="text-primary">示例展示</span></h1>
+        <h1 class="display-4 fw-bold">ViewSense <span class="text-primary">示例展示</span></h1>
         <p class="lead text-muted mb-0">滚动页面查看各种元素检测效果</p>
       </header>
       
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <section id="lazy" class="card mb-5">
         <div class="card-body p-4">
           <h2 class="card-title h3">延迟加载图片</h2>
-          <p class="card-text text-muted mb-4">使用EyeDOM实现图片的延迟加载</p>
+          <p class="card-text text-muted mb-4">使用ViewSense实现图片的延迟加载</p>
           <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
             ${Array(6).fill(0).map((_, i) => `
               <div class="col">
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </section>
 
       <footer class="text-center text-muted py-4 mt-5">
-        <p class="mb-0">EyeDOM Demo · <span class="text-primary">观察元素进入视口</span></p>
+        <p class="mb-0">ViewSense Demo · <span class="text-primary">观察元素进入视口</span></p>
       </footer>
     </div>
   `;

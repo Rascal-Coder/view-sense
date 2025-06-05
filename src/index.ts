@@ -161,14 +161,16 @@ const viewSense = (): ViewSenseControl => {
     if (typeof fn === 'function') {
       options.test = fn;
     }
-    return options.test;
+    // 确保总是返回一个函数，永远不会是undefined
+    return options.test || ViewSenseport;
   };
 
   /**
    * 添加测试函数的代理，设置默认值，
    * 并返回接口对象
    */
-  control.is = (el: Element): boolean => options.test(el, options);
+  control.is = (el: Element): boolean =>
+    (options.test || ViewSenseport)(el, options);
   control.offset(0);
   return control;
 };
