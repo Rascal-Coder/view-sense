@@ -21,7 +21,8 @@
     "format": "ultracite format",
     "test:unit": "vitest run",
     "prepublish": "pnpm run test:unit",
-    "release": "pnpm run lib:build && bumpp --push --tag && npm publish"
+    "release": "pnpm run lib:build && bumpp --push --tag && npm publish",
+    "build": "pnpm run lib:build && pnpm run docs:build"
   },
   "keywords": [],
   "author": "Rascal-Coder",
