@@ -13,12 +13,15 @@
     }
   },
   "scripts": {
-    "build": "tsup",
+    "lib:build": "tsup",
+    "docs:build": "turbo build",
+    "docs:preview": "turbo preview",
     "dev": "turbo dev",
     "lint": "ultracite lint",
     "format": "ultracite format",
     "test:unit": "vitest run",
-    "prepublish": "pnpm run test:unit"
+    "prepublish": "pnpm run test:unit",
+    "release": "pnpm run lib:build && bumpp --push --tag && npm publish"
   },
   "keywords": [],
   "author": "Rascal-Coder",
@@ -33,6 +36,7 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.17.17",
+    "bumpp": "^10.1.1",
     "jsdom": "^26.1.0",
     "typescript": "^5.8.3",
     "ultracite": "^4.2.6"
