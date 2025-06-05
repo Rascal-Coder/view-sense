@@ -17,7 +17,8 @@
     "dev": "turbo dev",
     "lint": "ultracite lint",
     "format": "ultracite format",
-    "test:unit": "vitest run"
+    "test:unit": "vitest run",
+    "prepublish": "pnpm run test:unit"
   },
   "keywords": [],
   "author": "Rascal-Coder",
